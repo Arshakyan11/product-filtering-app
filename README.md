@@ -76,10 +76,6 @@ VITE_API_BASE_URL=http://localhost:3001
 - Pagination resets on filter change
 - Designed as a technical interview task
 
-## License
-
-ISC
-
 ## Tests
 
 Basic unit and component testing is planned for this project.
