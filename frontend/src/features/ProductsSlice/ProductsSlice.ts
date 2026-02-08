@@ -55,6 +55,7 @@ const ProductsSlice = createSlice({
         maxPrice: undefined,
         minRating: undefined,
         limit: 9,
+        page: 1,
       };
     },
   },
@@ -63,6 +64,7 @@ const ProductsSlice = createSlice({
       .addCase(getProductsThunk.pending, (state) => {
         state.loading = true;
         state.error = null;
+        state.items = [];
       })
       .addCase(getProductsThunk.fulfilled, (state, action) => {
         state.loading = false;

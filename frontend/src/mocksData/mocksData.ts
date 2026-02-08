@@ -1,7 +1,7 @@
 export const PAGE_SIZES = [
-  { max: 405, size: 4 },
-  { max: 628, size: 5 },
-  { max: 954, size: 7 },
+  { max: 425, size: 4 },
+  { max: 628, size: 6 },
+  { max: 925, size: 8 },
 ];
 
 export const MAX_VISIBLE_PAGES = 5;

@@ -6,13 +6,16 @@ import {
   setParams,
 } from "../../features/ProductsSlice/ProductsSlice";
 import { useEffect } from "react";
-import { useWindowWidth } from "../../app/hooks/useWindowWidth";
 import { MAX_VISIBLE_PAGES, PAGE_SIZES } from "../../mocksData/mocksData";
-const Pagination = () => {
+
+interface PaginationProps {
+  width: number;
+}
+
+const Pagination = ({ width }: PaginationProps) => {
   const dispatch = useAppDispatch();
   const { pagination } = useAppSelector(getAllProductsInfo);
 
-  const width = useWindowWidth();
   const pageSize = PAGE_SIZES.find((each) => width <= each.max)?.size ?? 9;
 
   useEffect(() => {

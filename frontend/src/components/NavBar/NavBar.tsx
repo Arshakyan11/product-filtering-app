@@ -23,11 +23,10 @@ const NavBar = () => {
                 <p className="navContent_title_p2">Shop</p>
               </div>
             </div>
-            <div className="navContent_pages">
-              <NavLink to={ROUTES.HOME}>Products</NavLink>
-            </div>
           </div>
-          <div className="navContent_right"></div>
+          <div className="navContent_pages">
+            <NavLink to={ROUTES.HOME}>Products</NavLink>
+          </div>
         </div>
       </div>
     </div>

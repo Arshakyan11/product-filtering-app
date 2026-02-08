@@ -3,12 +3,11 @@ import { useEffect, useState } from "react";
 export const useWindowWidth = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   useEffect(() => {
-    const resizeScreen = () => setWidth(window.innerWidth);
-    document.addEventListener("resize", resizeScreen);
-    () => {
-      return document.removeEventListener("resize", resizeScreen);
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
     };
   }, [width]);
-
   return width;
 };
