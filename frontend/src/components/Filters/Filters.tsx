@@ -10,7 +10,7 @@ import { CaretDownFill } from "react-bootstrap-icons";
 
 interface FiltersProps {
   width: number;
-}
+} 
 
 const Filters = ({ width }: FiltersProps) => {
   const dispatch = useAppDispatch();

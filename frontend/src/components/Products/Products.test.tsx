@@ -2,13 +2,10 @@ import { screen } from "@testing-library/react";
 import Products from "./Products";
 import { renderWithRealStore } from "../../test/renderWithRealStore";
 import { PRELOADED_STATE } from "../../mocksData/mocksData";
+import { Home } from "../../pages";
 
 vi.mock("../Pagination/Pagination.tsx", () => ({
   default: () => <div data-testid="pagination" />,
-}));
-
-vi.mock("../../components/Filters/Filters.tsx", () => ({
-  default: () => <div data-testid="filters" />,
 }));
 
 describe("Products", () => {
@@ -40,9 +37,11 @@ describe("Products", () => {
     renderWithState();
     expect(screen.getByTestId("pagination")).toBeInTheDocument();
   });
-  it("renders Filters component successfully", () => {
-    renderWithRealStore(<Products />);
-    expect(screen.getByTestId("filters")).toBeInTheDocument();
+  it("loads filters from API and renders categories", async () => {
+    renderWithRealStore(<Home />);
+    expect(await screen.findByText("Electronics")).toBeInTheDocument();
+    expect(screen.getByText("Footwear")).toBeInTheDocument();
+    expect(screen.getByText("Clothing")).toBeInTheDocument();
   });
   it("items count is  0", async () => {
     renderWithRealStore(<Products />, {

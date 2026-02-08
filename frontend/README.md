@@ -52,4 +52,15 @@ The output will be generated in the `dist/` directory.
 
 ---
 
+## Testing
+
+This project uses **Vitest** and **React Testing Library** for unit and integration testing.
+API requests are mocked using **MSW (Mock Service Worker)** to ensure reliable and isolated tests.
+
+Run all tests:
+
+```bash
+npm run test
+```
+
 For backend setup and API details, see the main project README.
