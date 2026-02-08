@@ -60,37 +60,36 @@ const ProductsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder
-      .addCase(getProductsThunk.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getProductsThunk.fulfilled, (state, action) => {
-        state.loading = false;
-        state.error = null;
-        state.items = action.payload.data;
-        state.pagination = action.payload.pagination;
-      })
-      .addCase(getProductsThunk.rejected, (state, action) => {
-        state.loading = false;
-        state.error =
-          action.payload ?? "Something Went Wrong while getting products!!";
-      })
+    builder.addCase(getProductsThunk.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    });
+    builder.addCase(getProductsThunk.fulfilled, (state, action) => {
+      state.loading = false;
+      state.error = null;
+      state.items = action.payload.data;
+      state.pagination = action.payload.pagination;
+    });
+    builder.addCase(getProductsThunk.rejected, (state, action) => {
+      state.loading = false;
+      state.error =
+        action.payload ?? "Something Went Wrong while getting products!!";
+    });
 
-      //for Filters
-      .addCase(getFiltersThunk.pending, (state) => {
-        state.filtersLoading = false;
-        state.filtersError = null;
-      })
-      .addCase(getFiltersThunk.fulfilled, (state, action) => {
-        state.filtersLoading = false;
-        state.filters = action.payload;
-      })
-      .addCase(getFiltersThunk.rejected, (state, action) => {
-        state.filtersLoading = false;
-        state.filtersError =
-          action.payload ?? "Something Went Wrong while getting filters";
-      });
+    //for Filters
+    builder.addCase(getFiltersThunk.pending, (state) => {
+      state.filtersLoading = true;
+      state.filtersError = null;
+    });
+    builder.addCase(getFiltersThunk.fulfilled, (state, action) => {
+      state.filtersLoading = false;
+      state.filters = action.payload;
+    });
+    builder.addCase(getFiltersThunk.rejected, (state, action) => {
+      state.filtersLoading = false;
+      state.filtersError =
+        action.payload ?? "Something Went Wrong while getting filters";
+    });
   },
 });
 

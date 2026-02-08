@@ -14,10 +14,12 @@ const NavBar = () => {
                 src={logo}
                 alt="logoIcon"
                 onClick={() => navigate(ROUTES.HOME, { replace: true })}
+                aria-label="project logo"
               />
               <div
                 className="navContent_title"
                 onClick={() => navigate(ROUTES.HOME, { replace: true })}
+                aria-label="project Name"
               >
                 <p className="navContent_title_p1">Smart</p>
                 <p className="navContent_title_p2">Shop</p>

@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getFiltersThunk());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getProductsThunk(params));

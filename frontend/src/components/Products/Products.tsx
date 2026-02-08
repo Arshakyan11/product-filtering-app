@@ -17,7 +17,12 @@ const Products = () => {
           <div className={styles.products_all}>
             {items.map((elm) => {
               return (
-                <div className={styles.products_each} key={elm.id}>
+                <div
+                  className={styles.products_each}
+                  key={elm.id}
+                  role="definition"
+                  aria-label="Each Product"
+                >
                   <img
                     src={elm.imageUrl}
                     alt={elm.name}
