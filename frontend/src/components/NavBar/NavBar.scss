@@ -1,4 +1,4 @@
-@import "../../styles/mixin.scss";
+@use "../../styles/mixin.scss" as *;
 .navBar {
   border-bottom: 1px solid rgb(138, 138, 138);
   .container {
@@ -43,8 +43,6 @@
             border-bottom: 2px solid transparent;
           }
         }
-      }
-      .navContent_right {
       }
     }
   }

@@ -1,0 +1,81 @@
+@use "../../styles/mixin.scss" as *;
+
+.products {
+  display: flex;
+  gap: 40px;
+  padding: 40px 0;
+  background: white;
+  border-radius: 8px;
+  .productsWithPagination {
+    @include disFlexColumn(30px);
+    padding-bottom: 5px;
+    width: 100%;
+    .products_all {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      .products_each {
+        @include disFlexColumn(0px);
+        align-self: flex-start;
+        width: 300px;
+        background: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14);
+        }
+        .products_image {
+          height: 200px;
+          width: 100%;
+          object-fit: cover;
+        }
+        .products_info {
+          padding: 18px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .products_title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0f172a;
+          }
+          .products_category {
+            font-size: 13px;
+            color: #64748b;
+          }
+          .products_brand {
+            font-size: 13px;
+            color: #94a3b8;
+          }
+          .products_footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 14px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+            .products_price {
+              font-size: 18px;
+              font-weight: 700;
+              color: #0f172a;
+            }
+            .products_rating {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 14px;
+              font-weight: 600;
+              color: #ffb400;
+              background: #fff8e1;
+              padding: 4px 8px;
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

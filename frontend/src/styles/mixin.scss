@@ -4,3 +4,9 @@
   justify-content: center;
   gap: $gap;
 }
+
+@mixin disFlexColumn($gap: 5px) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}

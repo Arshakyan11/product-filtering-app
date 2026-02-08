@@ -12,7 +12,7 @@ const NavBar = () => {
             <div className="navContent_brand">
               <img
                 src={logo}
-                alt=""
+                alt="logoIcon"
                 onClick={() => navigate(ROUTES.HOME, { replace: true })}
               />
               <div

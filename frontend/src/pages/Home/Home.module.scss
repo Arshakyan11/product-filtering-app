@@ -1,0 +1,13 @@
+.home {
+background: #f8fafc;
+  .container {
+    max-width: 1440px;
+    margin: auto;
+    .homeContent {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 40px 20px;
+    }
+  }
+}

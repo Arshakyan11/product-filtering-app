@@ -1,0 +1,24 @@
+@use "../../styles/mixin.scss" as *;
+
+.pagination {
+  @include disFlexWithStyles(10px);
+  button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .pagination_btns {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  .pagination_mainPages {
+    font-size: 16px;
+    padding: 0px 0px 4px;
+    width: 20px;
+    border-bottom: 2px solid transparent;
+    &.active {
+      font-weight: 600;
+      border-bottom-color: #32ade6;
+    }
+  }
+}

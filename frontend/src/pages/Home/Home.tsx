@@ -1,11 +1,31 @@
-import React from 'react'
-import styles from "./Home.module.scss"
+import styles from "./Home.module.scss";
+import Products from "../../components/Products/Products";
+import { useEffect } from "react";
+import { getFiltersThunk, getProductsThunk } from "../../features/api/api";
+import { useAppDispatch, useAppSelector } from "../../app/store";
+import { getAllProductsInfo } from "../../features/ProductsSlice/ProductsSlice";
+import { scrolTo } from "../../helpers/scrollToTop";
 const Home = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const dispatch = useAppDispatch();
+  const { params } = useAppSelector(getAllProductsInfo);
+  useEffect(() => {
+    dispatch(getFiltersThunk());
+  }, []);
 
-export default Home
+  useEffect(() => {
+    dispatch(getProductsThunk(params));
+    scrolTo();
+  }, [params]);
+
+  return (
+    <div className={styles.home}>
+      <div className={styles.container}>
+        <div className={styles.homeContent}>
+          <Products />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
