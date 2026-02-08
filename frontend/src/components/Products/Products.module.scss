@@ -78,6 +78,27 @@
         }
       }
     }
+    .products_notFound {
+      max-width: 470px;
+      width: 100%;
+      align-self: center;
+      @include disFlexColumn(8px);
+      align-items: center;
+      margin-top: 104px;
+      img {
+        width: 120px;
+        height: 120px;
+      }
+      .products_notFoundTitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 133%;
+        color: #303240;
+      }
+      .products_notFoundsubTitle {
+        color: #303240;
+      }
+    }
   }
   @media screen and (max-width: 1225px) {
     .productsWithPagination {
@@ -109,6 +130,12 @@
           }
         }
       }
+      .products_notFound {
+        img {
+          width: 110px;
+          height: 110px;
+        }
+      }
     }
   }
   @media screen and (max-width: 768px) {
@@ -128,6 +155,11 @@
           }
         }
       }
+      .products_notFound {
+        .products_notFoundTitle {
+          font-size: 16px;
+        }
+      }
     }
   }
   @media screen and (max-width: 425px) {
@@ -141,6 +173,12 @@
     .productsWithPagination {
       .products_all {
         grid-template-columns: repeat(1, minmax(130px, 1fr));
+      }
+      .products_notFound {
+        .products_notFoundTitle {
+          font-size: 14px;
+          text-align: center;
+        }
       }
     }
   }

@@ -11,6 +11,7 @@
     padding: 10px;
     .navContent {
       display: flex;
+      align-items: center;
       .navContent_left {
         @include disFlexWithStyles(50px);
         .navContent_brand {
@@ -37,16 +38,24 @@
             }
           }
         }
-        .navContent_pages {
-          font-weight: 600;
-          padding-top: 10px;
-          a {
-            font-size: 18px;
-            letter-spacing: 1.5px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid transparent;
-          }
+      }
+      .navContent_pages {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-weight: 600;
+        padding-top: 10px;
+        a {
+          color: #7c3aed;
+          font-size: 18px;
+          letter-spacing: 1.5px;
+          padding-bottom: 5px;
+          border-bottom: 2px solid transparent;
         }
+      }
+      @media screen and (max-width: 475px) {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   }

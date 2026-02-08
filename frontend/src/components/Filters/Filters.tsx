@@ -14,7 +14,7 @@ interface FiltersProps {
 
 const Filters = ({ width }: FiltersProps) => {
   const dispatch = useAppDispatch();
-  const { filters, params } = useAppSelector(getAllProductsInfo);
+  const { filters, params, pagination } = useAppSelector(getAllProductsInfo);
   const [openFilters, setOpenFilters] = useState<boolean>(false);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Filters = ({ width }: FiltersProps) => {
     } else {
       setOpenFilters(false);
     }
-  }, [width]);
+  }, [width, pagination?.page]);
 
   if (!filters) return null;
 

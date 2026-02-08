@@ -8,6 +8,7 @@ import { scrolTo } from "../../helpers/scrollToTop";
 const Home = () => {
   const dispatch = useAppDispatch();
   const { params } = useAppSelector(getAllProductsInfo);
+
   useEffect(() => {
     dispatch(getFiltersThunk());
   }, []);
